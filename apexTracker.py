@@ -15,4 +15,4 @@ elif command == "news":
 elif command == "map":
     map()
 else:
-    print('Unknown error, make sure you\'re using "rank" or "stats"')
+    print('Unknown error, current commands are "rank", "stats", "news", and "map"')
