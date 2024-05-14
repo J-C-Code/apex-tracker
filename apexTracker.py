@@ -2,18 +2,17 @@ import sys
 from functions import *
 # Modules above
 
+command = sys.argv[1].lower()
 
-if sys.argv[1] == "rank":
+if command == "rank":
     username = sys.argv[-1]
     getRank(username)
-elif sys.argv[1] == "stats":
+elif command == "stats":
     username = sys.argv[-1]
     getStat(username)
-elif sys.argv[1] == "news":
-    username = sys.argv[-1]
+elif command == "news":
     news()
-elif sys.argv[1] == "map":
-    username = sys.argv[-1]
+elif command == "map":
     map()
 else:
     print('Unknown error, make sure you\'re using "rank" or "stats"')
