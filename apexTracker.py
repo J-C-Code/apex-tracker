@@ -12,5 +12,8 @@ elif sys.argv[1] == "stats":
 elif sys.argv[1] == "news":
     username = sys.argv[-1]
     news()
+elif sys.argv[1] == "map":
+    username = sys.argv[-1]
+    map()
 else:
     print('Unknown error, make sure you\'re using "rank" or "stats"')
