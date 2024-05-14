@@ -37,6 +37,14 @@ def getStat(name):
         # Catches Key Errors, if they don't uses origin name it won't work and will error.
         print(name, "was not recognized, make sure you're using your origin name")
 
+def news():
+    news = requests.get(f'https://api.mozambiquehe.re/news?auth={key}').json()
+    recentNews = news[0]
+    print("MOST RECENT NEWS ANNOUNCEMENT")
+    for item in recentNews:
+        print(item + ":", recentNews[item])
+
+
 
 if __name__ == "__main__":
     print()
