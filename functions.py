@@ -36,6 +36,27 @@ def getStat(name):
         # Catches Key Errors, if they don't uses origin name it won't work and will error.
         print(name + " was not recognized, make sure you're using your origin name")
 
+def news():
+    news = requests.get(f'https://api.mozambiquehe.re/news?auth={key}').json()
+    recentNews = news[0]
+    print("MOST RECENT NEWS ANNOUNCEMENT")
+    for item in recentNews:
+        print(item + ":", recentNews[item])
+
+def map():
+    pullItems = ["map", "remainingTimer"]
+    mapRotation = requests.get(f'https://api.mozambiquehe.re/maprotation?auth={key}').json()
+    currentMap = mapRotation['current']
+    nextMap = mapRotation['next']
+    for items in currentMap:
+        if items == "map":
+            print("Current map is:", currentMap[items])
+        if items == "remainingTimer":
+            print("Rotation cycles in:", currentMap[items])
+    for items in nextMap:
+        if items == "map":
+            print("Next map is:", currentMap[items])
+
 
 if __name__ == "__main__":
     print()
