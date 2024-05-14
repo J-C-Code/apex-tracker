@@ -44,6 +44,19 @@ def news():
     for item in recentNews:
         print(item + ":", recentNews[item])
 
+def map():
+    pullItems = ["map", "remainingTimer"]
+    mapRotation = requests.get(f'https://api.mozambiquehe.re/maprotation?auth={key}').json()
+    currentMap = mapRotation['current']
+    nextMap = mapRotation['next']
+    for items in currentMap:
+        if items == "map":
+            print("Current map is:", currentMap[items])
+        if items == "remainingTimer":
+            print("Rotation cycles in:", currentMap[items])
+    for items in nextMap:
+        if items == "map":
+            print("Next map is:", currentMap[items])
 
 
 if __name__ == "__main__":
