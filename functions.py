@@ -1,6 +1,5 @@
 import requests
 from apiKey import key
-import requests
 import json
 
 # Functions Below
@@ -35,7 +34,7 @@ def getStat(name):
             print(item["name"], ":", item["value"])
     except KeyError:
         # Catches Key Errors, if they don't uses origin name it won't work and will error.
-        print(name, "was not recognized, make sure you're using your origin name")
+        print(name + " was not recognized, make sure you're using your origin name")
 
 
 if __name__ == "__main__":
